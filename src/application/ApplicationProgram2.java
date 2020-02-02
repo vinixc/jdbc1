@@ -13,6 +13,7 @@ public class ApplicationProgram2 {
 		Department dep = new Department(6, "NEW-d2");
 //		departmentDao.insert(dep);
 //		departmentDao.update(dep);
+		departmentDao.deleteById(6);
 	}
 
 }
