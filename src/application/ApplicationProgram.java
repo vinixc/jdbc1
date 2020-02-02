@@ -17,18 +17,24 @@ public class ApplicationProgram {
 		
 		System.out.println("===TEST 1: seller findById ===== \n"+ sellerDao.findById(3));
 		
-		List<Seller> seller = sellerDao.findByDepartment(dep);
+		List<Seller> sellers = sellerDao.findByDepartment(dep);
 		System.out.println("===TEST 2: seller findByDepartment ===== \n");
-		seller.forEach(System.out::println);
+		sellers.forEach(System.out::println);
 		
-		seller = sellerDao.findAll();
+		sellers = sellerDao.findAll();
 		System.out.println("===TEST 3: seller findAll ===== \n");
-		seller.forEach(System.out::println);
+		sellers.forEach(System.out::println);
 		
 		System.out.println("===TEST 4: seller insert ===== \n");
-		Seller newSeller = new Seller(null, "Greg", "greg@gmail.com", new Date(), 4000.0, dep);
-		sellerDao.insert(newSeller);
+		Seller newSeller = new Seller(9, "Greg", "greg@gmail.com", new Date(), 4000.0, dep);
+		//sellerDao.insert(newSeller);
 		System.out.println("Inserted! New id = " + newSeller.getId());
+		
+		System.out.println("===TEST 5: seller update ===== \n");
+		Seller seller = sellerDao.findById(1);
+		seller.setName("Martha Waine");
+		sellerDao.update(seller);
+		System.out.println("Update completed");
 
 	}
 
