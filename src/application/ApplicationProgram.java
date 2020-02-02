@@ -18,6 +18,10 @@ public class ApplicationProgram {
 		List<Seller> seller = sellerDao.findByDepartment(new Department(2,null));
 		System.out.println("===TEST 2: seller findByDepartment ===== \n");
 		seller.forEach(System.out::println);
+		
+		seller = sellerDao.findAll();
+		System.out.println("===TEST 3: seller findAll ===== \n");
+		seller.forEach(System.out::println);
 	}
 
 }
